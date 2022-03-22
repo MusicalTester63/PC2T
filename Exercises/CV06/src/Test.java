@@ -1,13 +1,14 @@
 import java.util.Scanner;
 
+
 public class Test {
     public Test() {
     }
 
-    public static int pouzeCelaCisla(Scanner sc) {
+    public static int onlyIntegers(Scanner sc)
+    {
 
-        int cislo;
-
+        int cislo=0;
         try
         {
             cislo = sc.nextInt();
@@ -17,169 +18,107 @@ public class Test {
             System.out.println("Nastala vyjimka typu " + e.toString());
             System.out.println("zadejte prosim cele cislo ");
             sc.nextLine();
-            cislo = pouzeCelaCisla(sc);
+            cislo = onlyIntegers(sc);
         }
-
         return cislo;
     }
 
-    public static float pouzeCisla(Scanner sc) {
+    public static float onlyNumbers(Scanner sc) {
         float cislo = 0.0F;
 
-        try {
+        try
+        {
             cislo = sc.nextFloat();
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             System.out.println("Nastala vyjimka typu " + e.toString());
             System.out.println("zadejte prosim cislo ");
             sc.nextLine();
-            cislo = pouzeCisla(sc);
+            cislo = onlyNumbers(sc);
         }
-
         return cislo;
     }
 
-    public static void cls()
-    {
-        try
-        {
-            new ProcessBuilder("cmd","/c","cls").inheritIO().start().waitFor();
-        }catch(Exception E)
-        {
-            System.out.println(E);
-        }
-    }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws prumerException {
 
         Scanner sc=new Scanner(System.in);
-        Databaze mojeDatabaze=new Databaze(1);
-        int index;
+        Databaze mojeDatabaze = new Databaze();
         float prumer;
         int volba;
-        boolean run=true;
+        String jmeno;
+        int rok;
+        boolean run = true;
+
         while(run)
         {
             System.out.println("Vyberte pozadovanou cinnost:");
-            System.out.println("1 .. vytvoreni nove databaze");
-            System.out.println("2 .. vlozeni noveho studenta");
-            System.out.println("3 .. nastaveni prumeru studenta");
-            System.out.println("4 .. vypis informace o studentovi");
-            System.out.println("5 .. ulozeni do souboru");
-            System.out.println("6 .. nacteni ze souboru");
-            System.out.println("7 .. vypis databaze");
-            System.out.println("8 .. ukonceni aplikace");
+            System.out.println("1 .. vlozeni noveho studenta");
+            System.out.println("2 .. nastaveni prumeru studenta");
+            System.out.println("3 .. vypis informace o studentovi");
+            System.out.println("4 .. odstraneni studenta ");
+            System.out.println("5 .. vypis studentu ");
+            System.out.println("6 .. ukonceni aplikace");
 
-            volba=pouzeCelaCisla(sc);
+            volba = onlyIntegers(sc);
             switch(volba)
             {
                 case 1:
-
-                    System.out.println("Zadajte počet študentov ktorý budú uložený v databáze");
-                    mojeDatabaze=new Databaze(pouzeCelaCisla(sc));
+                    System.out.println("Zadejte jmeno studenta, rok narozeni");
+                    jmeno=sc.next();
+                    rok=Test.onlyIntegers(sc);
+                    if (!mojeDatabaze.setStudent(jmeno,rok))
+                    {
+                        System.out.println("Student v databazi jiz existuje");
+                    }
                 break;
-
 
                 case 2:
-                    try
+                    mojeDatabaze.printDatabase();
+                    System.out.println("Zadejte jmeno a prumer studenta");
+                    jmeno=sc.next();
+                    prumer = onlyNumbers(sc);
+                    if (!mojeDatabaze.setAvg(jmeno,prumer))
                     {
-                        mojeDatabaze.setStudent();
-                        int posledniStudent = mojeDatabaze.getPosledniStudent();
-                        mojeDatabaze.setPrumer(posledniStudent-1,1);
-                    }
-                    catch (ArrayIndexOutOfBoundsException e)
-                    {
-                        System.out.println("Error: databáza je plná");
-                    } catch (prumerException e) {
-                        e.printStackTrace();
+                        System.out.println("Prumer nezadan");
                     }
                 break;
 
-
                 case 3:
-                    mojeDatabaze.vypisDatabazi();
-                    System.out.println("Zadajte index a priemer študenta");
-                    index= pouzeCelaCisla(sc)-1;
-                    prumer = pouzeCisla(sc);
-                    try
+                    System.out.println("Input name of the student: ");
+                    jmeno = sc.next();
+                    Student info = null;
+                    info = mojeDatabaze.getStudent(jmeno);
+                    if (info!=null)
                     {
-                        mojeDatabaze.setPrumer(index,prumer);
+                        System.out.println("Jmeno: " + info.getJmeno() + " rok narozeni: " + info.getRocnik() + " prumer: " + info.getStudijniPrumer());
                     }
-                    catch(ArrayIndexOutOfBoundsException e)
-                    {
-                        System.out.println("Vybrana polozka mimo rozsah databaze");
-                    }
-                    catch (NullPointerException e)
+                    else
                     {
                         System.out.println("Vybrana polozka neexistuje");
                     }
-                    catch (prumerException e) {
-                        System.out.println(e.getMessage());
-                    }
                 break;
-
 
 
                 case 4:
-                    System.out.println("Zadajte index študenta");
-                    index=pouzeCelaCisla(sc)-1;
-                    Student info = null;
-
-                    try
-                    {
-                        info=mojeDatabaze.getStudent(index);
-                        System.out.println("Jmeno: " + info.getJmeno() + " rok narozeni: " + info.getRocnik() + " prumer: " + info.getStudijniPrumer());
+                    System.out.println("Zadejte jmeno studenta k odstraneni");
+                    jmeno = sc.next();
+                    if (mojeDatabaze.vymazStudenta(jmeno)) {
+                        System.out.println(jmeno + " odstranen ");
                     }
-                    catch(ArrayIndexOutOfBoundsException e)
+                    else
                     {
-                        System.out.println("Vybrana polozka mimo rozsah databaze");
-                    }
-                    catch (NullPointerException e)
-                    {
-                        System.out.println("Vybrana polozka neexistuje");
-                    } catch (prumerException e) {
-                        e.printStackTrace();
+                        System.out.println(jmeno + " neni v databazi ");
                     }
                 break;
-
 
                 case 5:
-                    System.out.println("Zadejte jmeno souboru");
-                    if (mojeDatabaze.ulozDatabazi( sc.next() ) )
-                    {
-                        System.out.println("Databaze ulozena");
-                    }
-                    else
-                    {
-                        System.out.println("Databazi nebylo mozno ulozit");
-                    }
+                    mojeDatabaze.printDatabase();
                 break;
-
-
 
                 case 6:
-                    System.out.println("Zadejte meno súboru ktorý obsahuje databázu");
-                    if (mojeDatabaze.nactiDatabazi(sc.next()))
-                    {
-                        System.out.println("Databaze nactena");
-                    }                                                                         //načítanie databazy
-                    else
-                    {
-                        System.out.println("Databazi nebylo mozno nacist");
-                    }
-
-                    break;
-
-
-
-                case 7:
-                    mojeDatabaze.vypisDatabazi();
-                break;
-
-
-
-
-                case 8:
-                    run=false;
+                    run = false;
                 break;
             }
 
@@ -187,3 +126,4 @@ public class Test {
 
     }
 }
+//Spýtať sa ako vyčistiť tú konzolu
