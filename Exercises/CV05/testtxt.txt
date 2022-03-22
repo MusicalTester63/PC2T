@@ -1,0 +1,3 @@
+Pocet 2
+Milka 2000 1.0
+Fero 2003 1.0
