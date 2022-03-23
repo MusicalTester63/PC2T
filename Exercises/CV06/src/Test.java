@@ -40,7 +40,7 @@ public class Test {
     }
 
 
-    public static void main(String[] args) throws prumerException {
+    public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         Databaze mojeDatabaze = new Databaze();
@@ -61,64 +61,54 @@ public class Test {
             System.out.println("6 .. EXIT");
 
             volba = onlyIntegers(sc);
-            switch(volba)
-            {
-                case 1:
+            switch (volba) {
+                case 1 -> {
                     System.out.println("Input name of the student and his year of birth:");
                     name = sc.next();
                     year = Test.onlyIntegers(sc);
-                    if (!mojeDatabaze.setStudent(name,year))
+                    if (!mojeDatabaze.setStudent(name, year))
                     {
                         System.out.println("Student already exists!");
                     }
-                break;
-
-                case 2:
+                }
+                case 2 -> {
                     mojeDatabaze.printDatabase();
                     System.out.println("Input name of the student and his average grade: ");
                     name = sc.next();
                     prumer = onlyNumbers(sc);
-                    if (!mojeDatabaze.setAvg(name,prumer))
+                    if (!mojeDatabaze.setAvg(name, prumer))
                     {
                         System.out.println("There has been and error inputing average!");
                     }
-                break;
-
-                case 3:
+                }
+                case 3 -> {
                     System.out.println("Input name of the student: ");
                     name = sc.next();
-                    Student info = null;
+                    Student info;
                     info = mojeDatabaze.getStudent(name);
-                    if (info!=null)
+                    if (info != null)
                     {
-                        System.out.println("Name: " + info.getJmeno() + "\nBirthyear: " + info.getRocnik() + "\nAverage: " + info.getStudijniPrumer()+"\n------------------------");
+                        System.out.println("Name: " + info.getJmeno() + "\nBirthyear: " + info.getRocnik() + "\nAverage: " + info.getStudijniPrumer() + "\n------------------------");
                     }
                     else
                     {
                         System.out.println("Error: Student doesn't exist");
                     }
-                break;
-
-
-                case 4:
+                }
+                case 4 -> {
                     System.out.println("Input name of the student you want to remove:");
                     name = sc.next();
-                    if (mojeDatabaze.rmStudent(name)) {
+                    if (mojeDatabaze.rmStudent(name))
+                    {
                         System.out.println(name + " has been removed ");
                     }
                     else
                     {
                         System.out.println(name + " is not in this database!");
                     }
-                break;
-
-                case 5:
-                    mojeDatabaze.printDatabase();
-                break;
-
-                case 6:
-                    run = false;
-                break;
+                }
+                case 5 -> mojeDatabaze.printDatabase();
+                case 6 -> run = false;
             }
 
         }
