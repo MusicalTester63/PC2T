@@ -2,11 +2,10 @@ import java.util.Scanner;
 
 
 public class Test {
-    public Test() {
-    }
 
-    public static int onlyIntegers(Scanner sc)
-    {
+    public Test() {}
+
+    public static int onlyIntegers(Scanner sc){
 
         int cislo=0;
         try
