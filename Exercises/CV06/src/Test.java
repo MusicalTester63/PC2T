@@ -16,7 +16,7 @@ public class Test {
         catch (Exception e)
         {
             System.out.println("Nastala vyjimka typu " + e.toString());
-            System.out.println("zadejte prosim cele cislo ");
+            System.out.println("Please input natural numbers only!");
             sc.nextLine();
             cislo = onlyIntegers(sc);
         }
@@ -33,7 +33,7 @@ public class Test {
         catch (Exception e)
         {
             System.out.println("Nastala vyjimka typu " + e.toString());
-            System.out.println("zadejte prosim cislo ");
+            System.out.println("Please input numbers only!");
             sc.nextLine();
             cislo = onlyNumbers(sc);
         }
@@ -43,73 +43,73 @@ public class Test {
 
     public static void main(String[] args) throws prumerException {
 
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         Databaze mojeDatabaze = new Databaze();
         float prumer;
         int volba;
-        String jmeno;
-        int rok;
+        String name;
+        int year;
         boolean run = true;
 
         while(run)
         {
-            System.out.println("Vyberte pozadovanou cinnost:");
-            System.out.println("1 .. vlozeni noveho studenta");
-            System.out.println("2 .. nastaveni prumeru studenta");
-            System.out.println("3 .. vypis informace o studentovi");
-            System.out.println("4 .. odstraneni studenta ");
-            System.out.println("5 .. vypis studentu ");
-            System.out.println("6 .. ukonceni aplikace");
+            System.out.println("Choose action:");
+            System.out.println("1 .. insert new student");
+            System.out.println("2 .. set student average");
+            System.out.println("3 .. print student information");
+            System.out.println("4 .. remove student");
+            System.out.println("5 .. print students");
+            System.out.println("6 .. EXIT");
 
             volba = onlyIntegers(sc);
             switch(volba)
             {
                 case 1:
-                    System.out.println("Zadejte jmeno studenta, rok narozeni");
-                    jmeno=sc.next();
-                    rok=Test.onlyIntegers(sc);
-                    if (!mojeDatabaze.setStudent(jmeno,rok))
+                    System.out.println("Input name of the student and his year of birth:");
+                    name = sc.next();
+                    year = Test.onlyIntegers(sc);
+                    if (!mojeDatabaze.setStudent(name,year))
                     {
-                        System.out.println("Student v databazi jiz existuje");
+                        System.out.println("Student already exists!");
                     }
                 break;
 
                 case 2:
                     mojeDatabaze.printDatabase();
-                    System.out.println("Zadejte jmeno a prumer studenta");
-                    jmeno=sc.next();
+                    System.out.println("Input name of the student and his average grade: ");
+                    name = sc.next();
                     prumer = onlyNumbers(sc);
-                    if (!mojeDatabaze.setAvg(jmeno,prumer))
+                    if (!mojeDatabaze.setAvg(name,prumer))
                     {
-                        System.out.println("Prumer nezadan");
+                        System.out.println("There has been and error inputing average!");
                     }
                 break;
 
                 case 3:
                     System.out.println("Input name of the student: ");
-                    jmeno = sc.next();
+                    name = sc.next();
                     Student info = null;
-                    info = mojeDatabaze.getStudent(jmeno);
+                    info = mojeDatabaze.getStudent(name);
                     if (info!=null)
                     {
-                        System.out.println("Jmeno: " + info.getJmeno() + " rok narozeni: " + info.getRocnik() + " prumer: " + info.getStudijniPrumer());
+                        System.out.println("Name: " + info.getJmeno() + "\nBirthyear: " + info.getRocnik() + "\nAverage: " + info.getStudijniPrumer()+"\n------------------------");
                     }
                     else
                     {
-                        System.out.println("Vybrana polozka neexistuje");
+                        System.out.println("Error: Student doesn't exist");
                     }
                 break;
 
 
                 case 4:
-                    System.out.println("Zadejte jmeno studenta k odstraneni");
-                    jmeno = sc.next();
-                    if (mojeDatabaze.vymazStudenta(jmeno)) {
-                        System.out.println(jmeno + " odstranen ");
+                    System.out.println("Input name of the student you want to remove:");
+                    name = sc.next();
+                    if (mojeDatabaze.rmStudent(name)) {
+                        System.out.println(name + " has been removed ");
                     }
                     else
                     {
-                        System.out.println(jmeno + " neni v databazi ");
+                        System.out.println(name + " is not in this database!");
                     }
                 break;
 

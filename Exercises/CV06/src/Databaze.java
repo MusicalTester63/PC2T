@@ -8,12 +8,12 @@ public class Databaze {
 
     Databaze()
     {
-        prvkyDatabaze= new HashMap<>();
+        prvkyDatabaze = new HashMap<>();
     }
 
-    public boolean setStudent(String jmeno,int rok)
+    public boolean setStudent(String name,int year)
     {
-        if (prvkyDatabaze.put(jmeno,new Student(jmeno,rok)) == null)
+        if (prvkyDatabaze.put(name,new Student(name,year)) == null)
         {
             return true;
         }
@@ -35,7 +35,7 @@ public class Databaze {
         }
         return prvkyDatabaze.get(name).setStudijniPrumer(avg);
     }
-    public boolean vymazStudenta(String name)
+    public boolean rmStudent(String name)
     {
         if (prvkyDatabaze.remove(name)!=null)
         {
@@ -43,13 +43,14 @@ public class Databaze {
         }
         return false;
     }
+
     public void printDatabase()
     {
-        Set<String> seznamJmen = prvkyDatabaze.keySet();
+        Set<String> nameList = prvkyDatabaze.keySet();
 
-        for(String jmeno:seznamJmen)
+        for(String name:nameList)
         {
-            System.out.println(jmeno);
+            System.out.println(name);
         }
     }
 
