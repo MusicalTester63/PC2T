@@ -88,7 +88,16 @@ public class Test {
                     info = mojeDatabaze.getStudent(name);
                     if (info != null)
                     {
-                        System.out.println("Name: " + info.getJmeno() + "\nBirthyear: " + info.getRocnik() + "\nAverage: " + info.getStudijniPrumer() + "\n------------------------");
+                        System.out.println
+                        (
+                                "\n------------------------\nName: "
+                                + info.getJmeno()
+                                + "\nBirthyear: "
+                                + info.getRocnik()
+                                + "\nAverage: "
+                                + info.getStudijniPrumer()
+                                + "\n------------------------"
+                        );
                     }
                     else
                     {
@@ -110,9 +119,7 @@ public class Test {
                 case 5 -> mojeDatabaze.printDatabase();
                 case 6 -> run = false;
             }
-
         }
-
     }
 }
 //Spýtať sa ako vyčistiť tú konzolu

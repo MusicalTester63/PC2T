@@ -4,7 +4,6 @@ import java.util.Set;
 
 public class Databaze {
 
-
     private final Map<String,Student>  prvkyDatabaze;
 
     Databaze()
