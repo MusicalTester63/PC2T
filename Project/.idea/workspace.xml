@@ -5,36 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f544cd6-1dd2-44c9-a746-68e53cf3c8d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Exercises/CV05/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Project-Template/Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grade.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/studentDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/studentModel/AbstractStudent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/studentModel/Grade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/studentModel/ImplementedStudents/combinedStudent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/studentModel/ImplementedStudents/humStudent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/studentModel/ImplementedStudents/techStudent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/studentModel/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/studentModel/eduField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/studentModel/eduFieldInterfaces/COMBINED.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/studentModel/eduFieldInterfaces/HUM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/studentModel/eduFieldInterfaces/TECH.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/studentModel/eduFieldInterfaces/Zodiac.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Check.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Osoba.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Student2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StudentTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ucitel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ucitel2.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/~$project diagram.drawio.bkp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/app$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/app$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/database/studentDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/database/studentDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/AbstractStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/studentModel/AbstractStudent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/studentModel/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/studentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/studentDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/AbstractStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/studentModel/AbstractStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/studentModel/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

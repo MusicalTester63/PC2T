@@ -13,12 +13,9 @@ public class app {
 
 
 
-
-
     //Vytvorenie scannera a instancie databázy s menom studentDatabase
     private Scanner sc = new Scanner(System.in);
     private studentDB db = new studentDB("studentDatabse");
-
 
 
 
@@ -186,8 +183,6 @@ public class app {
         Application.mainMenu();
 
     }
-
-
 
 
 
@@ -378,18 +373,12 @@ public class app {
         boolean searching=true;
 
         do {
-            try {
                 db.printStudent(stringInput("(To exit searching input:0)\nStudnet ID: "));
                 if(stringInput("\nWould you like to search for another?(yes/no): ").equalsIgnoreCase("yes")){
                     continue;
                 }
                 searching = false;
-            } catch (Exception e) {
-                System.out.println("Student not found.\n");
-                if(stringInput("Would you like to search for another?(yes/no): ").equalsIgnoreCase("no")){
-                    searching=false;
-                }
-            }
+
         }while(searching);
     }
 
@@ -549,15 +538,14 @@ public class app {
 
     //VYPÍŠE ABECEDNE ZORADENÝCH ŠTUDENTOV
     private void printAbcDB(){
-
         System.out.println("PRINTABC not impemented yet");
+        db.printStudentDB();
     }
 
     //VYPÍŠE CELKOVÝ PRIEMER ŠTUDENTOV JEDNOTLIVÝCH OBOROV
     private void calcFieldAverage(){
-
-
-        System.out.println("CALCFIELDAVERAGE not impemented yet");
+        System.out.println("AVERAGE GRADE IN EACH EDUCATION FIELD\n-----------------------------------------");
+        db.calcFieldAverage();
     }
 
     //VYPÍŠE KOĽKO ŠTUDENTOV SA NACHÁDZA V OBOROCH
@@ -593,7 +581,6 @@ public class app {
                 );
 
     }
-
 
 
 }

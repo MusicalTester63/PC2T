@@ -1,5 +1,6 @@
 package studentModel;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface Student {
@@ -20,7 +21,7 @@ public interface Student {
 
     void addGrade(Grade grade);
 
-    float gradeAVG();
+    HashMap<String,Float> gradeAVG();
 
     String printStudent();
 

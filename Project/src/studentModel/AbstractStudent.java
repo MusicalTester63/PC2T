@@ -1,8 +1,8 @@
 package studentModel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Scanner;
 
 public class AbstractStudent implements Student{
 
@@ -69,7 +69,9 @@ public class AbstractStudent implements Student{
         gradeList.add(grade);
     }
 
-    public float gradeAVG(){
+    public HashMap<String,Float> gradeAVG(){
+
+        HashMap<String, Float> averageComponents = new HashMap<>();
 
         float gradeSUM=0;
         float gradeCOUNT=0;
@@ -79,11 +81,13 @@ public class AbstractStudent implements Student{
         for (var val: gradeList) {
 
             gradeSUM = gradeSUM + val;
-            gradeCOUNT+=1;
-
+            gradeCOUNT++;
         }
 
-        return gradeSUM/gradeCOUNT;
+        averageComponents.put("gradeSUM",gradeSUM);
+        averageComponents.put("gradeCOUNT",gradeCOUNT);
+
+        return averageComponents;
 
     }
 
