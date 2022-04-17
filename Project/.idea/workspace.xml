@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Project:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f544cd6-1dd2-44c9-a746-68e53cf3c8d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/~$project diagram.drawio.bkp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Project_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/app$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/app$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/app.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/database/studentDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/database/studentDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/AbstractStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/studentModel/AbstractStudent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/studentModel/Student.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/studentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/studentDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/studentModel/AbstractStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/studentModel/AbstractStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/studentModel/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/studentModel/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +63,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/studentModel/db/exceptions" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">

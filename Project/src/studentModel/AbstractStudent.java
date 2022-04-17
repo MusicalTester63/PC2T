@@ -10,7 +10,7 @@ public class AbstractStudent implements Student{
     private String firstName;
     private String lastName;
     private eduField education_field;
-    private List<Grade> gradeList = new ArrayList<>();
+    private final List<Grade> gradeList = new ArrayList<>();
 
     public AbstractStudent() {}
 

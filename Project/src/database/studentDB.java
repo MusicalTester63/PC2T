@@ -16,11 +16,20 @@ public class studentDB {
     private final HashMap<String, Student> studentHashMap = new HashMap<>();
 
 
+    @SuppressWarnings("unused")
+    public void setDbName (String dbName){
+        this.dbNAME = dbName;
+    }
+
+    @SuppressWarnings("unused")
+    public String getDbName () {
+        return this.dbNAME;
+    }
+
 
 
     public studentDB(String dbNAME){
         this.dbNAME = dbNAME;
-
     }
 
     public void addStudentToDB(String studentId, Student student){

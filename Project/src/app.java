@@ -12,12 +12,9 @@ import java.util.concurrent.TimeUnit;
 public class app {
 
 
-
     //Vytvorenie scannera a instancie databázy s menom studentDatabase
     private Scanner sc = new Scanner(System.in);
     private studentDB db = new studentDB("studentDatabse");
-
-
 
 
 
@@ -65,7 +62,6 @@ public class app {
 
         return  gradeList;
     }
-
 
 
 
@@ -174,8 +170,6 @@ public class app {
 
 
 
-
-
     //MAIN METÓDA KTORÁ LEN SPUSTÍ INSTANCIU APLIKÁCIE
     public static void main(String[] args) {
 
@@ -183,8 +177,6 @@ public class app {
         Application.mainMenu();
 
     }
-
-
 
 
 
@@ -299,7 +291,7 @@ public class app {
                 Boolean leapYear;
                 try
                 {
-                    leapYear= Boolean.valueOf(stringInput("Leap year?(true/false)"));
+                    leapYear= Boolean.valueOf(stringInput("Leap year?(true/false): "));
                 }
                 catch (Exception e)
                 {
@@ -521,14 +513,14 @@ public class app {
                     System.out.println("Student's education field isn't technical or combined.");
                 }
 
-                if(stringInput("\nWould you like to change zodiac for another student?(yes/no): ").equalsIgnoreCase("yes")){
+                if(stringInput("\nWould you like to change leap year for another student?(yes/no): ").equalsIgnoreCase("yes")){
                     continue;
                 }
                 leap = false;
             } catch (Exception e) {
                 e.printStackTrace();
                 System.out.println("\nStudent not found.\n");
-                if(stringInput("Would you like to change zodiac for other student?(yes/no): ").equalsIgnoreCase("no")){
+                if(stringInput("Would you like to change leap year for another student?(yes/no): ").equalsIgnoreCase("no")){
                     leap=false;
                 }
 
@@ -575,12 +567,38 @@ public class app {
 
         System.out.println
                 (
-                        "Students studying technical educational field: "+ tech[0] +
-                                "\nStudents studying human sciences: "+ hum[0] +
-                                "\nStudents studying studying both: "+ comb[0]+"\n"
+                        "NUMBER OF STUDENTS IN EACH EDUCATION FIELD\n-----------------------------------------"+
+                        "\nStudents studying technical educational field: "+ tech[0] +
+                        "\nStudents studying human sciences: "+ hum[0] +
+                        "\nStudents studying studying both: "+ comb[0]+"\n"
                 );
 
     }
+
+    //ULOŽÍ DATABÁZU
+    private void saveDB(){
+
+
+
+
+
+    }
+
+    //NAČÍTA DATABÁZU
+    private void loadDB(){
+
+
+
+
+    }
+
+
+
+
+
+
+
+
 
 
 }
