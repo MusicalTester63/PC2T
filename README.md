@@ -6,11 +6,9 @@ This repository contains:
 2. [Project](#exercises)
 
 <a name="project"></a>
-### Project
+## Project
 
-### Project diagram
-
-![diagram](images/project_diagram.png)
+Semester project
 
 ### Project objective
 
@@ -51,11 +49,15 @@ Program musí dále obsahovat následující:
 - Alespoň jednu abstraktní třídu nebo rozhraní 
 - Alespoň jednu dynamickou datovou strukturu
 
+### Project diagram
+
+![diagram](images/project_diagram.png)
+
+
 
 
 
 <a name="exercises"></a>
-
 ## Exercises
 
 ### List of exercises
