@@ -12,7 +12,7 @@ Semester project
 
 ### Project objective
 
-**Předpokládejme databázi studentů univerzity, kde každý student má svoje identifikační číslo, jméno, příjmení a datum narození. Každý student může dostat libovolný počet známek (standardní známkování 1 až 5), z nějž je počítán studijní průměr. Existují tři skupiny studentů:**
+#### Předpokládejme databázi studentů univerzity, kde každý student má svoje identifikační číslo, jméno, příjmení a datum narození. Každý student může dostat libovolný počet známek (standardní známkování 1 až 5), z nějž je počítán studijní průměr. Existují tři skupiny studentů:
 
 * Studenti technického oboru, kteří dokážou říci, zda byl rok jejich narození rokem přestupným. 
 * Studenti kombinovaného studia, kteří dokážou obojí výše zmíněné. 
