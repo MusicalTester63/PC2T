@@ -1,18 +1,18 @@
 # PC2T - Počítače a programování 2
 
-##Repository description
+## Repository description
 This repository contains:
-1. Excerises(#project)
-2. Project(#exercises)
+1. [Excerises](#project)
+2. [Project](#exercises)
 
 <a name="project"></a>
-###Project
+### Project
 
 ### Project diagram
 
 ![diagram](images/project_diagram.png)
 
-###Project objective
+### Project objective
 
 Předpokládejme databázi studentů univerzity, kde každý student má svoje identifikační číslo, jméno, 
 příjmení a datum narození. Každý student může dostat libovolný počet známek (standardní 
@@ -56,9 +56,9 @@ Program musí dále obsahovat následující:
 
 <a name="exercises"></a>
 
-##Exercises
+## Exercises
 
-###List of exercises
+### List of exercises
 
 * Excerise 1
 * Excerise 2
