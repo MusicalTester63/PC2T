@@ -1,12 +1,14 @@
 import database.studentDB;
-import studentModel.*;
-import studentModel.ImplementedStudents.*;
-import studentModel.eduFieldInterfaces.*;
-
+import studentModel.AbstractStudent;
+import studentModel.Grade;
+import studentModel.ImplementedStudents.combinedStudent;
+import studentModel.ImplementedStudents.humStudent;
+import studentModel.ImplementedStudents.techStudent;
+import studentModel.Student;
+import studentModel.eduField;
+import studentModel.eduFieldInterfaces.Zodiac;
 
 import java.io.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -61,11 +63,18 @@ public class app {
         boolean run = true;
 
         List<Grade> gradeList = new ArrayList<>();
-        System.out.println("(To end input:0)\nInput Grades:");
+        System.out.print("(To end input:0)\nInput Grades: ");
         while(run){
 
             Grade grade = new Grade();
-            grade.setGrade(sc.nextInt());
+            int gradeInput = sc.nextInt();
+
+            if(gradeInput > -1 && gradeInput < 6){
+                grade.setGrade(gradeInput);
+            }else{
+                System.out.println("Please input grades 1-5\n");
+                continue;
+            }
 
             if(grade.getGrade() == 0){run=false;}
             else {
@@ -220,6 +229,7 @@ public class app {
 
                     }while(ending);
                     System.out.println("Goodbye");
+                    conWait(2);
                     System.exit(0);
 
                 }
@@ -241,7 +251,13 @@ public class app {
 
         //Checks if file1 exists
         if(database.exists() && !database.isDirectory()){
-            Application.loadDB();
+            try
+            {
+                Application.loadDB();
+            }
+            catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
         Application.mainMenu();
 
@@ -258,6 +274,10 @@ public class app {
     //VYYTVORÍ INSTANCIU JEDNÉHO ŠTUDENTA Z KAŽDÉHO OBORU
     private void test(){
 
+        System.out.println("Studenti: "+db.getStudentHashMap().size());
+
+
+    /*
         Student student;
         List<Grade> grades = new ArrayList<>();
 
@@ -304,11 +324,14 @@ public class app {
             }
         }
 
+
+     */
     }
 
     private void addStudent() {
 
         Student student;
+        int studId = db.getStudentHashMap().size()+1;
 
         String firstName = stringInput("First name:");
         String lastName = stringInput("Last Name:");
@@ -323,8 +346,8 @@ public class app {
                 var gradeL = gradeInput();
 
 
-                student = new techStudent(230250, educationField,gradeL);
-                db.addStudentToDB("230250",student);
+                student = new techStudent(db.getStudentHashMap().size()+1, educationField,gradeL);
+                db.addStudentToDB(String.valueOf(studId),student);
 
 
             //VYTVORENIE ŠTUDENTA HUMANITNÉHO OBORU
@@ -332,8 +355,10 @@ public class app {
                 educationField = eduField.HUMAN;
                 var gradeL = gradeInput();
 
-                student = new humStudent(230251, educationField,gradeL);
-                db.addStudentToDB("230251",student);
+
+
+                student = new humStudent(studId, educationField,gradeL);
+                db.addStudentToDB(String.valueOf(studId),student);
 
 
 
@@ -343,8 +368,8 @@ public class app {
                 var gradeL = gradeInput();
 
 
-                student = new combinedStudent(230522, educationField, gradeL);
-                db.addStudentToDB("230252",student);
+                student = new combinedStudent(db.getStudentHashMap().size()+1, educationField, gradeL);
+                db.addStudentToDB(String.valueOf(studId),student);
 
             } else {
                 System.out.println("Error:Wrong input!");
@@ -479,6 +504,7 @@ public class app {
     }
 
     //PRIDANIE ZNÁMOK ŠTUDENTOVI(Blbečkovzdorné)
+    @SuppressWarnings("IfStatementWithIdenticalBranches")
     private void addGrades(){
 
         System.out.println("ADDING GRADES\n-----------------------------------------");
@@ -537,6 +563,7 @@ public class app {
     }
 
     //SPOČÍTA PRIEMER VYBRANÉHO ŠTUDENTA
+    @SuppressWarnings("IfStatementWithIdenticalBranches")
     private void calcAverage(){
 
         System.out.println("CALCULATE AVERAGE\n-----------------------------------------");
@@ -589,6 +616,7 @@ public class app {
     }
 
     //ZMENA ZNAMENIA PRE VYBRANÉHO ŠTUDENTA
+    @SuppressWarnings("IfStatementWithIdenticalBranches")
     private void changeZodiac(){
 
         System.out.println("CHANGE/ADD ZODIAC\n-----------------------------------------");
@@ -691,9 +719,24 @@ public class app {
 
     //VYPÍŠE ABECEDNE ZORADENÝCH ŠTUDENTOV
     private void printAbcDB(){
-        System.out.println("PRINTABC not impemented yet");
 
-        db.printStudentDB();
+        System.out.println("ALPHABETICALLY SORTED STUDENT LIST\n-----------------------------------------");
+        ArrayList<Student> listOfValues = new ArrayList<>(db.getStudentHashMap().values());
+        listOfValues.sort(Comparator.comparing(Student::getLastName));
+
+        for (Student value : listOfValues) {
+
+            System.out.println(
+
+                    "Student ID: "+value.getId()+
+                            "\nFirst Name: "+value.getFirstName()+
+                            "\nLast name: "+value.getLastName()+
+                            "\nEducation field: "+value.getEduField().toString()+
+                            "\nGrades:"+value.getGrades()+"\n\n"
+
+
+            );
+        }
 
 
     }
@@ -738,8 +781,6 @@ public class app {
                 );
 
     }
-
-
 
     //ULOŽÍ DATABÁZU
     private void saveDB() throws IOException {

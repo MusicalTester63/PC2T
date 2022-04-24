@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class AbstractStudent implements Student, Serializable {
+public class AbstractStudent implements Student, Serializable, Comparable<Student> {
 
     private Integer id;
     private String firstName;
@@ -99,6 +99,13 @@ public class AbstractStudent implements Student, Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
+
+    @Override
+    public int compareTo(Student o) {
+        return this.lastName.compareTo(o.getLastName());
+    }
+
 
 
 }
