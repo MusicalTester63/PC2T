@@ -5,10 +5,42 @@ import studentModel.Student;
 import studentModel.ImplementedStudents.*;
 import studentModel.eduFieldInterfaces.Zodiac;
 
+import java.io.Serializable;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
+public class studentDB  implements Serializable {
 
-public class studentDB {
+
+    public String noStudents(){
+
+        String megaMind = """
+                ———————————No student?———————————
+                ⣞⢽⢪⢣⢣⢣⢫⡺⡵⣝⡮⣗⢷⢽⢽⢽⣮⡷⡽⣜⣜⢮⢺⣜⢷⢽⢝⡽⣝
+                ⠸⡸⠜⠕⠕⠁⢁⢇⢏⢽⢺⣪⡳⡝⣎⣏⢯⢞⡿⣟⣷⣳⢯⡷⣽⢽⢯⣳⣫⠇
+                ⠀⠀⢀⢀⢄⢬⢪⡪⡎⣆⡈⠚⠜⠕⠇⠗⠝⢕⢯⢫⣞⣯⣿⣻⡽⣏⢗⣗⠏⠀
+                ⠀⠪⡪⡪⣪⢪⢺⢸⢢⢓⢆⢤⢀⠀⠀⠀⠀⠈⢊⢞⡾⣿⡯⣏⢮⠷⠁⠀⠀
+                ⠀⠀⠀⠈⠊⠆⡃⠕⢕⢇⢇⢇⢇⢇⢏⢎⢎⢆⢄⠀⢑⣽⣿⢝⠲⠉⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⡿⠂⠠⠀⡇⢇⠕⢈⣀⠀⠁⠡⠣⡣⡫⣂⣿⠯⢪⠰⠂⠀⠀⠀⠀
+                ⠀⠀⠀⠀⡦⡙⡂⢀⢤⢣⠣⡈⣾⡃⠠⠄⠀⡄⢱⣌⣶⢏⢊⠂⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⢝⡲⣜⡮⡏⢎⢌⢂⠙⠢⠐⢀⢘⢵⣽⣿⡿⠁⠁⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠨⣺⡺⡕⡕⡱⡑⡆⡕⡅⡕⡜⡼⢽⡻⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⣼⣳⣫⣾⣵⣗⡵⡱⡡⢣⢑⢕⢜⢕⡝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⣴⣿⣾⣿⣿⣿⡿⡽⡑⢌⠪⡢⡣⣣⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⡟⡾⣿⢿⢿⢵⣽⣾⣼⣘⢸⢸⣞⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠁⠇⠡⠩⡫⢿⣝⡻⡮⣒⢽⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                —————————————————————————————
+                """;
+/*
+        ByteBuffer buffer = StandardCharsets.UTF_8.encode(megaMind);
+        String megaMindEncoded = StandardCharsets.UTF_8.decode(buffer).toString();
+
+        assertEquals(megaMind, megaMindEncoded);
+
+ */
+        return megaMind;
+    }
 
 
     private String dbNAME;
@@ -38,14 +70,25 @@ public class studentDB {
 
     public void printStudentDB(){
 
-        studentHashMap.forEach((key, value) -> {
+        if(studentHashMap.isEmpty()){
+
+            System.out.println(noStudents());
+
+
+        }else {
+
+            studentHashMap.forEach((key, value) -> {
+
+
+                System.out.println(value.printStudent());
+                System.out.println();
+
+            });
+        }
 
 
 
-            System.out.println(value.printStudent());
-            System.out.println();
 
-        });
     }
 
     public HashMap<String, Student> getStudentHashMap(){
@@ -57,7 +100,6 @@ public class studentDB {
     }
 
     public void printStudent(String StudentID){
-
         Student student = studentHashMap.get(StudentID);
 
         if(student instanceof techStudent) {
@@ -68,12 +110,14 @@ public class studentDB {
             System.out.println(student.printStudent());
         }else{
             System.out.println("Student not found.");
+            System.out.println(noStudents());
         }
 
     }
 
     public void removeStudent(String StudentID){
         studentHashMap.remove(StudentID);
+        System.out.println("--STUDENT REMOVED--");
     }
 
     public void addGradeToStudent(String StudentID,Grade grade){

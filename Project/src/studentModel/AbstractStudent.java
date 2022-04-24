@@ -1,10 +1,11 @@
 package studentModel;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class AbstractStudent implements Student{
+public class AbstractStudent implements Student, Serializable {
 
     private Integer id;
     private String firstName;

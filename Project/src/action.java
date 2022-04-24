@@ -10,6 +10,8 @@ public enum action {
     COUNTALL,
     CALC_FAVERAGE,
     PRINTABC,
+    SAVE_DB,
+    LOAD_DB,
     TESTING,
     END
 }

@@ -9,7 +9,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f544cd6-1dd2-44c9-a746-68e53cf3c8d6" name="Changes" comment="v1.0" />
+    <list default="true" id="2f544cd6-1dd2-44c9-a746-68e53cf3c8d6" name="Changes" comment="v1.0">
+      <change afterPath="$PROJECT_DIR$/database.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grade.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Project_jar/Project.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Project_jar/Project.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/action.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/action.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/app$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/app$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/app.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/database/studentDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/database/studentDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/AbstractStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/studentModel/AbstractStudent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/Grade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/studentModel/Grade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/studentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/studentDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/AbstractStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/studentModel/AbstractStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/studentModel/Grade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student.db" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +65,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -55,7 +76,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">

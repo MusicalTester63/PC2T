@@ -1,6 +1,8 @@
 package studentModel;
 
-public class Grade {
+import java.io.Serializable;
+
+public class Grade implements Serializable {
 
     private int grade;
 

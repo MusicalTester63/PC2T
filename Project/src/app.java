@@ -4,6 +4,9 @@ import studentModel.ImplementedStudents.*;
 import studentModel.eduFieldInterfaces.*;
 
 
+import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -19,6 +22,16 @@ public class app {
 
 
     //METÓDY KTORÉ SA STARAJÚ O INPUT OD UŽÍVATEĽA
+    public void conWait(int seconds){
+
+        try {
+            TimeUnit.SECONDS.sleep(seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     private String input(){return sc.next();}
 
     private String stringInput(String prompt) {
@@ -102,7 +115,11 @@ public class app {
             return action.CALC_FAVERAGE;
         }else if (input == 10) {
             return action.COUNTALL;
-        } else if (input == 11){
+        }else if (input == 11) {
+            return action.SAVE_DB;
+        }else if (input == 12) {
+            return action.LOAD_DB;
+        } else if (input == 13){
             return action.TESTING;
         } else if (input == 0) {
             return action.END;
@@ -130,11 +147,13 @@ public class app {
         System.out.println("8 - Print students sorted alphabetically");
         System.out.println("9 - Calculate grade average of each field");
         System.out.println("10 - Counts all students in each field");
-        System.out.println("11 - CREATE INSTANCE OF STUDENT, ONE FROM EACH EDUCATION FIELD");
+        System.out.println("11 - save database");
+        System.out.println("12 - load database");
+        System.out.println("13 - CREATE INSTANCE OF STUDENT, ONE FROM EACH EDUCATION FIELD");
         System.out.println("0 - EXIT\n");
     }
 
-    private void mainMenu(){
+    private void mainMenu() throws IOException,ClassNotFoundException{
         action Action;
         printMenu();
         do
@@ -158,10 +177,51 @@ public class app {
                 case PRINTABC -> printAbcDB();
                 case CALC_FAVERAGE -> calcFieldAverage();
                 case COUNTALL -> countStudents();
+                case SAVE_DB -> saveDB();
+                case LOAD_DB -> loadDB();
                 case TESTING -> test();
                 case END -> {
+
+                    boolean ending = true;
+
+
+                    do {
+
+                        String yesno =stringInput("\nWould you like to save current databse?(yes/no): ");
+
+                        if(yesno.equalsIgnoreCase("yes"))
+                        {
+                            saveDB();
+                            System.out.println("DATABASE HAS BEEN SAVED");
+                            ending = false;
+                        }
+                        else if(yesno.equalsIgnoreCase("no"))
+                        {
+
+                            String doublecheck =stringInput("WARNING: Your database will be lost, dou you wish to proceed?(yes/no): ");
+                            if(doublecheck.equalsIgnoreCase("yes"))
+                            {
+                                break;
+                            }
+                            else if(yesno.equalsIgnoreCase("no"))
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                System.out.println("Interpreting vague answer as no.");
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            System.out.println("Interpreting vague answer as no.");
+                        }
+
+                    }while(ending);
                     System.out.println("Goodbye");
                     System.exit(0);
+
                 }
             }
             printMenu();
@@ -170,13 +230,24 @@ public class app {
 
 
 
+
+
     //MAIN METÓDA KTORÁ LEN SPUSTÍ INSTANCIU APLIKÁCIE
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException{
 
         app Application = new app();
+
+        File database = new File("database.dat");
+
+        //Checks if file1 exists
+        if(database.exists() && !database.isDirectory()){
+            Application.loadDB();
+        }
         Application.mainMenu();
 
     }
+
+
 
 
 
@@ -354,7 +425,7 @@ public class app {
         //NA KONIEC NASTAVENIE MENA A PRIEZVISKA
         student.setFirstName(firstName);
         student.setLastName(lastName);
-        System.out.println("\n\n");
+        System.out.println("--STUDENT HAS BEEN ADDED TO DATABASE--\n");
 
     }
 
@@ -365,11 +436,22 @@ public class app {
         boolean searching=true;
 
         do {
-                db.printStudent(stringInput("(To exit searching input:0)\nStudnet ID: "));
-                if(stringInput("\nWould you like to search for another?(yes/no): ").equalsIgnoreCase("yes")){
-                    continue;
-                }
-                searching = false;
+            db.printStudent(stringInput("(To exit searching input:0)\nStudnet ID: "));
+
+            String yesno =stringInput("\nWould you like to search for another student?(yes/no): ");
+
+            if(yesno.equalsIgnoreCase("yes"))
+            {
+                continue;
+            }
+            else if(yesno.equalsIgnoreCase("no"))
+            {
+                break;
+            }
+
+            System.out.println("Interpreting vague answer as no.");
+            conWait(3);
+            searching = false;
 
         }while(searching);
     }
@@ -396,35 +478,61 @@ public class app {
         }while(removing);
     }
 
-    //PRIDANIE ZNÁMOK ŠTUDENTOVI
+    //PRIDANIE ZNÁMOK ŠTUDENTOVI(Blbečkovzdorné)
     private void addGrades(){
 
         System.out.println("ADDING GRADES\n-----------------------------------------");
         boolean adding=true;
 
-        do {
-            try {
-                String studentID = stringInput("(To exit input:0)\nStudnet ID: ");
+        do
+        {
+            String studentID = stringInput("(To exit input:0)\nStudnet ID: ");
+            Student student = db.getStudent(studentID);
+
+            if(student == null){
+
+                System.out.println(db.noStudents());
+
+                String yesno =stringInput("\nWould you like to add grades to other student?(yes/no): ");
+
+                if(yesno.equalsIgnoreCase("yes"))
+                {
+                    continue;
+                }
+                else if(yesno.equalsIgnoreCase("no"))
+                {
+                    break;
+                }
+                System.out.println("Interpreting vague answer as no.");
+                conWait(3);
+                adding = false;
+            }
+            else
+            {
+
                 db.printStudent(studentID);
                 System.out.println("\n");
-
                 var gradeList = gradeInput();
 
                 for (var val : gradeList) {
-                    db.addGradeToStudent(studentID, val);
+                        db.addGradeToStudent(studentID, val);
                 }
 
-                if(stringInput("\nWould you like to add grades to another student?(yes/no): ").equalsIgnoreCase("yes")){
+                String yesno =stringInput("\nWould you like to add grades to another student?(yes/no): ");
+
+                if (yesno.equalsIgnoreCase("yes"))
+                {
                     continue;
                 }
-                adding = false;
-            } catch (Exception e) {
-                System.out.println("\nStudent not found.\n");
-                if(stringInput("Would you like to add grades to other student?(yes/no): ").equalsIgnoreCase("no")){
-                    adding=false;
+                else if(yesno.equalsIgnoreCase("no"))
+                {
+                    break;
                 }
-
+                System.out.println("Interpreting vague answer as no.");
+                conWait(3);
+                adding = false;
             }
+
         }while(adding);
     }
 
@@ -434,22 +542,48 @@ public class app {
         System.out.println("CALCULATE AVERAGE\n-----------------------------------------");
         boolean calc=true;
 
-        do {
-            try {
-                String studentID = stringInput("(To exit input:0)\nStudnet ID: ");
+        do
+        {
+            String studentID = stringInput("(To exit input:0)\nStudnet ID: ");
+            Student student = db.getStudent(studentID);
+
+            if(student == null)
+            {
+                System.out.println(db.noStudents());
+
+                String yesno = stringInput("\nWould you like to calculate average grade for another student?(yes/no): ");
+
+                if(yesno.equalsIgnoreCase("yes"))
+                {
+                    continue;
+                }
+                else if(yesno.equalsIgnoreCase("no"))
+                {
+                    break;
+                }
+
+                System.out.println("Interpreting vague answer as no.");
+                conWait(3);
+                calc = false;
+
+            }
+            else {
                 db.printStudent(studentID);
                 db.calcStudentAverage(studentID);
 
-                if(stringInput("\nWould you like to calculate average grade for another student?(yes/no): ").equalsIgnoreCase("yes")){
+                String yesno = stringInput("\nWould you like to calculate average grade for another student?(yes/no): ");
+
+                if (yesno.equalsIgnoreCase("yes"))
+                {
                     continue;
                 }
-                calc = false;
-            } catch (Exception e) {
-                System.out.println("\nStudent not found.\n");
-                if(stringInput("Would you like to calculate grade average for other student?(yes/no): ").equalsIgnoreCase("no")){
-                    calc=false;
+                else if(yesno.equalsIgnoreCase("no"))
+                {
+                    break;
                 }
-
+                System.out.println("Interpreting vague answer as no.");
+                conWait(3);
+                calc = false;
             }
         }while(calc);
     }
@@ -461,35 +595,62 @@ public class app {
         boolean zodiac=true;
 
         do {
-            try {
-                String studentID = stringInput("(To exit input:0)\nStudnet ID: ");
+
+            String studentID = stringInput("(To exit input:0)\nStudnet ID: ");
+            Student student = db.getStudent(studentID);
+
+            if(student == null)
+            {
+                System.out.println(db.noStudents());
+
+                String yesno = stringInput("\nWould you like to change zodiac for other student?(yes/no): ");
+
+                if(yesno.equalsIgnoreCase("yes"))
+                {
+                    continue;
+                }
+                else if(yesno.equalsIgnoreCase("no"))
+                {
+                    break;
+                }
+
+                System.out.println("Interpreting vague answer as no.");
+                conWait(3);
+                zodiac = false;
+
+            }
+            else
+            {
                 Zodiac zodiacSign;
 
-
-                if(db.getStudent(studentID) instanceof humStudent || db.getStudent(studentID) instanceof combinedStudent){
+                if(student instanceof humStudent || student instanceof combinedStudent){
                     db.printStudent(studentID);
                     zodiacSign = Zodiac.valueOf(stringInput("Zodiac sign: ").toUpperCase());
                     db.changeStudentZodiac(studentID, zodiacSign);
 
-                }else{
+                }
+                else
+                {
                     System.out.println("Student's education field isn't human or combined.");
                 }
 
-                if(stringInput("\nWould you like to change zodiac for another student?(yes/no): ").equalsIgnoreCase("yes")){
+                String yesno = stringInput("\nWould you like to change zodiac for another student?(yes/no): ");
+
+                if (yesno.equalsIgnoreCase("yes"))
+                {
                     continue;
                 }
-                zodiac = false;
-            } catch (Exception e) {
-                e.printStackTrace();
-                System.out.println("\nStudent not found.\n");
-                if(stringInput("Would you like to change zodiac for other student?(yes/no): ").equalsIgnoreCase("no")){
-                    zodiac=false;
+                else if(yesno.equalsIgnoreCase("no"))
+                {
+                    break;
                 }
+
+                System.out.println("Interpreting vague answer as no.");
+                conWait(3);
+                zodiac = false;
 
             }
         }while(zodiac);
-
-
     }
 
     //ZMENA STAVU PRECHODNÉHO ROKU PRE VYBRANÉHO ŠTUDENTA
@@ -531,7 +692,10 @@ public class app {
     //VYPÍŠE ABECEDNE ZORADENÝCH ŠTUDENTOV
     private void printAbcDB(){
         System.out.println("PRINTABC not impemented yet");
+
         db.printStudentDB();
+
+
     }
 
     //VYPÍŠE CELKOVÝ PRIEMER ŠTUDENTOV JEDNOTLIVÝCH OBOROV
@@ -575,20 +739,22 @@ public class app {
 
     }
 
+
+
     //ULOŽÍ DATABÁZU
-    private void saveDB(){
-
-
-
-
-
+    private void saveDB() throws IOException {
+        FileOutputStream fos = new FileOutputStream("database.dat");
+        ObjectOutputStream oos =new ObjectOutputStream(fos);
+        oos.writeObject(db);
+        fos.close();
     }
 
     //NAČÍTA DATABÁZU
-    private void loadDB(){
-
-
-
+    private void loadDB() throws IOException, ClassNotFoundException{
+        FileInputStream fis =new FileInputStream("database.dat");
+        ObjectInputStream ois =new ObjectInputStream(fis);
+        db = (studentDB) ois.readObject();
+        fis.close();
 
     }
 
