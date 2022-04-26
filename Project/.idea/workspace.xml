@@ -10,7 +10,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f544cd6-1dd2-44c9-a746-68e53cf3c8d6" name="Changes" comment="10/12">
+      <change afterPath="$PROJECT_DIR$/db/scripts/students.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/students.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/sql/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/sql/crud/SQLrunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercises/CV07/target/classes/cz/vutbr/feec/dbconnection/RunApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exercises/CV07/target/classes/cz/vutbr/feec/dbconnection/RunApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/action.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/app$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/app.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/database/studentDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/AbstractStudent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/Grade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/ImplementedStudents/combinedStudent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/ImplementedStudents/humStudent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/ImplementedStudents/techStudent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/eduField.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/eduFieldInterfaces/COMBINED.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/eduFieldInterfaces/HUM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/eduFieldInterfaces/TECH.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/studentModel/eduFieldInterfaces/Zodiac.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/studentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/studentDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/AbstractStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/studentModel/AbstractStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/studentModel/Grade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/ImplementedStudents/combinedStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/studentModel/ImplementedStudents/combinedStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/ImplementedStudents/humStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/studentModel/ImplementedStudents/humStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/ImplementedStudents/techStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/studentModel/ImplementedStudents/techStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/studentModel/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/eduField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/studentModel/eduField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/eduFieldInterfaces/COMBINED.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/studentModel/eduFieldInterfaces/COMBINED.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/eduFieldInterfaces/HUM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/studentModel/eduFieldInterfaces/HUM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/eduFieldInterfaces/TECH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/studentModel/eduFieldInterfaces/TECH.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/studentModel/eduFieldInterfaces/Zodiac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/studentModel/eduFieldInterfaces/Zodiac.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,21 +89,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/studentModel/db/exceptions" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/David/OneDrive/Plocha/sqlite-jdbc-3.16.1.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\David\Moje veci\Documents\PC2T\Project\src\studentModel\db\exceptions" />
@@ -70,7 +105,7 @@
   </component>
   <component name="RunManager">
     <configuration name="RUN" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="app" />
+      <option name="MAIN_CLASS_NAME" value="main.java.app" />
       <module name="Project" />
       <method v="2">
         <option name="Make" enabled="true" />
