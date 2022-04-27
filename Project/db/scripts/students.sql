@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hostiteľ: 127.0.0.1
--- Čas generovania: Út 26.Apr 2022, 19:49
+-- Čas generovania: Út 26.Apr 2022, 21:37
 -- Verzia serveru: 10.4.18-MariaDB
 -- Verzia PHP: 7.3.27
 
@@ -31,7 +31,8 @@ CREATE TABLE `combinedstudents` (
   `id_combinedStudent` int(4) NOT NULL,
   `firstName_combinedStudent` varchar(6) NOT NULL,
   `lastnameName_combinedStudent` varchar(12) NOT NULL,
-  `isLeap_combinedStudent` tinyint(1) NOT NULL
+  `isLeap_combinedStudent` tinyint(1) NOT NULL,
+  `zodiac_combinedStudent` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -44,7 +45,7 @@ CREATE TABLE `humanstudents` (
   `id_humanStudent` int(4) NOT NULL,
   `firstName_humanStudent` varchar(6) NOT NULL,
   `lastnameName_humanStudent` varchar(12) NOT NULL,
-  `isLeap_humanStudent` tinyint(1) NOT NULL
+  `zodiac_humanStudent` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
