@@ -58,16 +58,16 @@ Při přijetí na univerzitu, je každý student zařazen do jedné z výše uve
 
 ### List of exercises
 
-* Excerise 1
-* Excerise 2
-* Excerise 3
-* Excerise 4
-* Excerise 5
-* Excerise 6
-* Excerise 7
-* Excerise 8
-* Excerise 9
-* Excerise 10
+* [Exercises 1](https://github.com/MusicalTester63/PC2T/tree/main/Exercises/CV01)
+* [Exercises 2](https://github.com/MusicalTester63/PC2T/tree/main/Exercises/CV02)
+* [Exercises 3](https://github.com/MusicalTester63/PC2T/tree/main/Exercises/CV03)
+* [Exercises 4](https://github.com/MusicalTester63/PC2T/tree/main/Exercises/CV04)
+* [Exercises 5](https://github.com/MusicalTester63/PC2T/tree/main/Exercises/CV05)
+* [Exercises 6](https://github.com/MusicalTester63/PC2T/tree/main/Exercises/CV06)
+* [Exercises 7](https://github.com/MusicalTester63/PC2T/tree/main/Exercises/CV07)
+* [Exercises 8](https://github.com/MusicalTester63/PC2T/tree/main/Exercises/CV08)
+* [Exercises 9](https://github.com/MusicalTester63/PC2T/tree/main/Exercises/CV09)
+* [Exercises 10](https://github.com/MusicalTester63/PC2T/tree/main/Exercises/CV10)
 
 
 
