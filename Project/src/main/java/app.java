@@ -1,8 +1,6 @@
 package main.java;
 
-import main.java.database.sql.DBConnection;
 import main.java.database.sql.crud.InsertQueries;
-import main.java.database.sql.crud.SQLrunner;
 import main.java.database.sql.crud.SelectQueries;
 import main.java.database.studentDB;
 import main.java.studentModel.Grade;
@@ -14,7 +12,6 @@ import main.java.studentModel.eduField;
 import main.java.studentModel.eduFieldInterfaces.Zodiac;
 
 import java.io.*;
-import java.sql.Connection;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -283,10 +280,6 @@ public class app {
 
 
 
-
-
-
-
         /*
         SQLrunner RS = new SQLrunner();
         RS.runSQL();
@@ -303,7 +296,7 @@ public class app {
             i.insertStudentGrade(student);
         }
 
-
+        */
         Student student;
         List<Grade> grades = new ArrayList<>();
 
@@ -350,7 +343,7 @@ public class app {
             }
         }
 
-         */
+
 
     }
 

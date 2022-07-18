@@ -4,7 +4,7 @@
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -12,7 +12,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/OneDrive/Plocha/sqlite-jdbc-3.16.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/db/dependecies/sqlite-jdbc-3.16.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
