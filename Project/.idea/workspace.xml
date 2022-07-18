@@ -10,9 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f544cd6-1dd2-44c9-a746-68e53cf3c8d6" name="Changes" comment="10/12">
-      <change beforePath="$PROJECT_DIR$/../Exercises/CV07/target/classes/cz/vutbr/feec/dbconnection/RunApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Exercises/CV07/target/classes/cz/vutbr/feec/dbconnection/RunApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../images/project_diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
